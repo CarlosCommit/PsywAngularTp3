@@ -1,0 +1,61 @@
+<div class="container">
+    <h1>Punto1</h1>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+   Carrito
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Carrito</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         
+            
+            <div *ngFor="let item of carrito">
+ 
+                <h6>{{item.producto.nombre}}</h6>
+                <h6>{{item.producto.precio}}</h6>
+                <input type="number" [(ngModel)]="item.cantidad" (input)="verificar(item)">
+              
+            </div>
+
+           <h6>Precio total {{total}}</h6>
+        
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+
+                <div class="col-4" *ngFor="let producto of productos">
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{producto.nombre}}</h5>
+                          <p class="card-text">{{producto.descripcion}}</p>
+                          <a href="#" class="btn btn-primary" (click)="addToCart(producto)" >Agregar al carrito</a>
+                        </div>
+                      </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
