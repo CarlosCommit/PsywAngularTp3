@@ -1,0 +1,28 @@
+
+<form>
+  <div class="mb-3">
+    <label for="dni" class="form-label">Dni</label>
+    <input type="text" class="form-control" id="dni" [(ngModel)]="ticket.dni" name="dni" >
+  </div>
+
+  <div class="mb-3">
+    <label for="precioReal" class="form-label" >Precio Real</label>
+    <input type="number" class="form-control" id="PrecioReal" name="precioReal" [(ngModel)]="ticket.precioReal" (input)="calcular()">
+  </div>
+
+  <div class="mb-3">
+    <label for="Tipo" class="form-label">Tipo de Espectador</label>
+    <select class="form-select" id="floatingSelect" aria-label="Floating label select example" [(ngModel)]="ticket.tipo" name="tipo" (ngModelChange)="calcular()" (blur)="calcular()" >
+        <option value="l" name="tipo">Local</option>
+        <option value="e" name="tipo">Extranjero</option>
+      </select>
+  </div>
+  
+  <div class="mb-3" *ngIf="ticket.precioCobrado!==0">
+    <label for="Precio Cobrado" class="form-label">Precio a Cobrar {{ticket.precioCobrado | moneda}}</label>
+  </div>
+  
+  <button  *ngIf="accion=='new'" type="submit" class="btn btn-primary" (click)="guardar()">Guardar</button>
+  <button *ngIf="accion=='edit'" type="submit" class="btn btn-primary" (click)="editar()">Editar</button>
+  <button  type="submit" class="btn btn-primary" routerLink="/punto5">Volver</button>
+</form>

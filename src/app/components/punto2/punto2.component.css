@@ -1,0 +1,19 @@
+.pregunta{
+    
+    border-radius: 30px;
+}
+.opcion{
+    border-radius: 4px;
+    width: 100%;
+    height: 15rem;
+    background-color: #F5DEB3;
+}
+.custom-gutter {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .fondo{
+    background-color:#FFF5EE;
+  }
+
+  

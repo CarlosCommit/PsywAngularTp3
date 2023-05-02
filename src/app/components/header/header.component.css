@@ -1,0 +1,21 @@
+.menu{
+ display: flex;
+ color: white ;
+
+}
+header{
+    background-color: black !important;
+   
+}
+.navbar-nav li.nav-item a.nav-link {
+    color: white;
+  }
+nav
+{
+    height: 100%;
+}
+
+.logo{
+    width: 16rem;
+}
+
