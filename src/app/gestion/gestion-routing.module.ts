@@ -7,7 +7,7 @@ import { RegistroTicketsComponent } from './components/registro-tickets/registro
 const routes: Routes = [
   {path:"formulario/:id", component:FormTicketComponent},
   {path:"lista", component:ListTicketComponent},
-  {path:"", component:ListTicketComponent},
+  {path:"", redirectTo:'lista',pathMatch:'full'}
   
 ];
 

@@ -34,6 +34,8 @@ export class Punto1Component implements OnInit {
     const item = this.carrito.find(item => item.producto.id === producto.id);
     item ? item.cantidad += 1 : this.carrito.push(new Item(producto, 1));
     this.calculate();
+
+    alert("Se agrega una Unidad al carrito");
   }
 
   calculate(): void {

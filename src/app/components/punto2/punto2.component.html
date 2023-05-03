@@ -3,10 +3,10 @@
     <div class="col-sm-12">
 
         <div class="row">
-            <h5 class="col-sm-3">Aciertos: {{acierto}}</h5>
-            <h5 class="col-sm-3">Errores: {{error}} </h5>
-            <h5 class="col-sm-3">Puntaje: {{puntaje}}</h5>
-            <h5 class="col-sm-3">Pregunta {{indice+1}}</h5>
+            <h5 class="col-sm-3" [ngClass]="clase">Aciertos: {{acierto}}</h5>
+            <h5 class="col-sm-3" [ngClass]="clase">Errores: {{error}} </h5>
+            <h5 class="col-sm-3" [ngClass]="clase">Puntaje: {{puntaje}}</h5>
+            <h5 class="col-sm-3">Pregunta n° {{indice+1}}</h5>
         </div>
 
     </div>
@@ -17,8 +17,8 @@
     
     <div class="col-6  mb-4 my-2 " (click)="avanzar(opcion)" *ngFor="let opcion of opciones">
         <div class="opcion row justify-content-center align-items-center">
-            <h2 class="h1 text-center ">{{opcion.opcion}}</h2>
-            <div *ngIf="opcion.correcto">es la respuesta</div>
+            <div class="text-center ">{{opcion.opcion}}</div>
+          <!--  <div *ngIf="opcion.correcto">es la respuesta</div>-->
         </div>
        
     </div>
@@ -30,9 +30,16 @@
 
 <div class="row" *ngIf="!jugando">
     <div class="col-12 text-center">
-      <button class="btn btn-primary btn-lg mx-auto"(click)="play()" >¡Empezar a Jugar!</button>
+      <button class="btn btn-defecto btn-lg mx-auto"(click)="play()" >¡Empezar a Jugar!</button>
     </div>
   </div>
+
+
+<div class="row" *ngIf="jugando">
+  <div class="col-12 text-center">
+    <button class="btn btn-defecto btn-lg mx-auto"(click)="jugando=false" >¡Salir!</button>
+  </div>
+</div>
 
   
   <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="llamarModal">

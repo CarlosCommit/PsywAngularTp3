@@ -18,6 +18,7 @@ export class Punto2Component implements OnInit {
   acierto!:number;
   error!:number;
   puntaje!:number;
+  clase!:string;
 
 
 
@@ -91,10 +92,9 @@ public play():void
   private actualizarPuntajes(option:any):void
   {
      (option.correcto)? this.puntaje=(++this.acierto*20) : ++this.error;
-
-    }
+     this.clase = option.correcto? "acierto":"error";
       
-  
+  }
 
   private generarOpciones()
   {

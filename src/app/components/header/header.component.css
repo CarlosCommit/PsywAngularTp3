@@ -19,3 +19,11 @@ nav
     width: 16rem;
 }
 
+.active{
+ color: #F1B32A!important;
+}
+
+.color-toggle{
+    background-color: white!important;
+}
+

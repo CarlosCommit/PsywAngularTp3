@@ -18,6 +18,6 @@ export class Ticket {
     }*/
     constructor()
     {
-        
+        this.precioCobrado=0;
     }
 }

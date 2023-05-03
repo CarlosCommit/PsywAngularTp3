@@ -12,11 +12,11 @@ export class TicketServiceService {
     this.registros=[
       {id:1,dni:"43889665",precioReal:200, tipo:"l",fechaCobro: new Date(), precioCobrado: 200},
       {id:2,dni:"43889125",precioReal:320, tipo:"l",fechaCobro: new Date(), precioCobrado: 320},
-      {id:3,dni:"43889422",precioReal:100, tipo:"l",fechaCobro: new Date(), precioCobrado: 100},
-      {id:4,dni:"42319665",precioReal:700, tipo:"l",fechaCobro: new Date(), precioCobrado: 500},
+      {id:3,dni:"43889422",precioReal:100, tipo:"e",fechaCobro: new Date(), precioCobrado: 100},
+      {id:4,dni:"42319665",precioReal:700, tipo:"e",fechaCobro: new Date(), precioCobrado: 500},
       {id:5,dni:"53139665",precioReal:600, tipo:"l",fechaCobro: new Date(), precioCobrado: 400},
       {id:6,dni:"43319643",precioReal:400, tipo:"l",fechaCobro: new Date(), precioCobrado: 100},
-      {id:7,dni:"43964565",precioReal:300, tipo:"l",fechaCobro: new Date(), precioCobrado: 150},
+      {id:7,dni:"43964565",precioReal:300, tipo:"e",fechaCobro: new Date(), precioCobrado: 150},
     ]
    }
 
@@ -31,6 +31,7 @@ export class TicketServiceService {
    }
 
    public guardarRegistro(ticket:Ticket):void{
+    ticket.id=this.registros[(this.registros.length-1)].id+1;
     this.registros.push(ticket);
    }
 

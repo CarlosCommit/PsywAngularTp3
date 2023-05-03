@@ -2,7 +2,7 @@
 <div class="row">
 
   <div class="col-sm-10"><h1>Registros de ventas</h1></div>
-<button class="btn btn-primary col-sm-2" type="button" data-bs-toggle="collapse" data-bs-target="#tabla" (click)="cargarResumen()">Ver Resumen</button>
+<button class="btn btn-default col-sm-2" type="button" data-bs-toggle="collapse" data-bs-target="#tabla" (click)="cargarResumen()">Ver Resumen</button>
 
 <div class="collapse col-sm-12" id="tabla">
   <table class="table">
@@ -52,7 +52,7 @@
         <td>{{ticket.precioCobrado | moneda}}</td>
         
         <td><button class="btn btn-danger" (click)="borrarTicket(ticket)">Borrar</button></td>
-        <td><button class="btn btn-success" [routerLink]="['/formulario/'+ticket.id]">Editar</button></td>
+        <td><button class="btn btn-default" [routerLink]="['/formulario/'+ticket.id]">Editar</button></td>
       </tr>
     </tbody>
   </table>

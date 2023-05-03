@@ -7,7 +7,8 @@ import { GestionRoutingModule } from './gestion/gestion-routing.module';
 
 
 const routes: Routes = [
-  {path:"", component:Punto1Component},
+  {path:"", redirectTo:'/punto1', pathMatch:'full'},
+  {path:"punto1",component:Punto1Component},
   {path:"punto2", component:Punto2Component },
   {path:"punto5", component:RegistroTicketsComponent, loadChildren: ()=> import('./gestion/gestion.module').then(m=>m.GestionModule),
   }
